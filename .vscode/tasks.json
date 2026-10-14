@@ -1,0 +1,40 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cmake",
+            "label": "Build",
+            "command": "build",
+            "targets": [
+                "all"
+            ],
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc",
+            "detail": "Build the active CMake preset"
+        },
+        {
+            "type": "cmake",
+            "label": "Flash (ST-Link)",
+            "command": "build",
+            "targets": [
+                "flash"
+            ],
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "group": "build",
+            "problemMatcher": "$gcc",
+            "detail": "Build, then program the board through ST-Link (OpenOCD)"
+        },
+        {
+            "type": "cmake",
+            "label": "Clean",
+            "command": "clean",
+            "preset": "${command:cmake.activeBuildPresetName}",
+            "problemMatcher": [],
+            "detail": "Clean the active CMake preset"
+        }
+    ]
+}
